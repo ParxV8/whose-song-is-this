@@ -1,0 +1,17 @@
+{
+  "name": "whose-song-is-this",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multiplayer party game: guess which friend's Spotify playlist a song came from.",
+  "workspaces": ["server", "client"],
+  "engines": { "node": ">=20.19" },
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c green,magenta \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client",
+    "start": "npm run start -w server",
+    "test": "npm test -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
